@@ -1,0 +1,65 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	color: #999;
+	background-color: #f8f8f8;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	color: #c66;
+	text-decoration: none;
+}
+ul.log_list{
+	margin-left: 2em;
+	list-style-type: disc;
+}
+ul.log_lines{
+	margin-left: 1em;
+	line-height: 1.2em;
+}
+ul.log_lines span{
+	margin-right: 0.2em;
+}
+ul.log_lines span.time{
+	font-weight: bold;
+}
+ul.log_lines span.speaker{
+	font-weight: bold;
+	font-style: italic;
+}
+ul.log_lines li.speaker0 span.speaker,
+ul.log_lines li.speaker0 span.text{
+	color: #000;
+}
+ul.log_lines li.speaker1 span.speaker,
+ul.log_lines li.speaker1 span.text{
+	color: #00c;
+}
+ul.log_lines li.speaker2 span.speaker,
+ul.log_lines li.speaker2 span.text{
+	color: #0c0;
+}
+ul.log_lines li.speaker3 span.speaker,
+ul.log_lines li.speaker3 span.text{
+	color: #0cc;
+}
+ul.log_lines li.speaker4 span.speaker,
+ul.log_lines li.speaker4 span.text{
+	color: #c00;
+}
+ul.log_lines li.speaker5 span.speaker,
+ul.log_lines li.speaker5 span.text{
+	color: #c0c;
+}
+ul.log_lines li.speaker5 span.speaker,
+ul.log_lines li.speaker5 span.text{
+	color: #cc0;
+}
+ul.log_lines li.speaker5 span.speaker,
+ul.log_lines li.speaker5 span.text{
+	color: #ccc;
+}
