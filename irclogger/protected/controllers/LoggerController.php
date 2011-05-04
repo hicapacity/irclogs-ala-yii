@@ -1,9 +1,6 @@
 <?php
 
 class LoggerController extends Controller{
-	/**
-	 * Declares class-based actions.
-	 */
 	public function actions(){
 		return array(
 			// page action renders "static" pages stored under 'protected/views/site/pages'

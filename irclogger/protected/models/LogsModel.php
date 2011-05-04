@@ -37,19 +37,22 @@ class LogsModel extends CFormModel{
 	}
 
 	public function getLogFromDate($date){
+		/* Return a LogFile object from a particular date */
 		$fn = $this->_filenameFromDate($date);
 		return new LogFile($fn);
 	}
 
 	public function validateDate($date){
+		/* Makes sure the date is valid. */
 		return ctype_digit($date) && strlen($date) === 8;
 	}
 }
 
 class LogLine{
-	private $raw;
+	/* Encapsulates behavior of a line of a log */
+	private $raw; // Raw string
 	public $time;
-	public $type;
+	public $type; // 'speech' or 'action'
 	public $speaker;
 	public $text;
 
@@ -60,20 +63,25 @@ class LogLine{
 	}
 	
 	private function parse(){
-		$pieces = explode(" ", $this->raw, 3);
+		/* Figure out what all the parts are */
+		// We currently assume logs look like:
+		//   [12:34] <someguy> This is what I said
+		// TODO: Give constructor a format string (logs won't always be in this format)
+		$pieces = explode(' ', $this->raw, 3);
 		$this->time = substr($pieces[0], 1, 5);
 		if ($pieces[1][0] === '<'){
-			$this->type = "speech";
+			$this->type = 'speech';
 			$this->speaker = substr($pieces[1], 1, -1);
 			$this->text = $pieces[2];
 		}else{
-			$this->type = "action";
+			$this->type = 'action';
 			$this->speaker = $pieces[1];
 			$this->text = $pieces[2];
 		}
 	}
 
 	private function funkify(){
+		/* During development/testing we'll funk up all the text */
 		if ($this->type === 'speech'){
 			$arr = range('a', 'z');
 			$arrb = $arr;
